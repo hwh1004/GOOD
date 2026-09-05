@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif KR', serif;
+    background-color: #fcfbf9;
+    color: #4a4a4a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Base Wrapper for Mobile First */
+.wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cover Section */
+.cover-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.cover-image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    margin-top: 50%;
+}
+
+.cover-content h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.cover-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+    line-height: 1.3;
+    letter-spacing: 3px;
+}
+
+.cover-content h1 span {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #f1e2c3;
+}
+
+.cover-content .date {
+    font-size: 1.1rem;
+    margin-top: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.cover-content .location {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Common Section Styles */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #cca685;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Invitation Section */
+.invitation-section .message {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.parents-info {
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 40px;
+    background: #fdfcfb;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.parents-info strong {
+    font-size: 1.2rem;
+    color: #333;
+    margin-left: 5px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #cca685;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background-color: #b38b69;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-btn {
+    width: 100%;
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* Countdown Section */
+.countdown-text {
+    margin-bottom: 30px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-box {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 70px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #cca685;
+    margin-bottom: 5px;
+}
+
+.time-box label {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Account Section */
+.account-box {
+    background: #fdfcfb;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.account-box h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.account-box p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.copy-btn {
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.copy-btn:hover {
+    background-color: #e5e5e5;
+}
+
+/* Footer */
+.footer {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fcfbf9;
+    color: #cca685;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
